@@ -9,7 +9,7 @@ import os
 
 
 sys.stdout.reconfigure(encoding='utf-8')
-pdf_path="1234.pdf"
+pdf_path="Rules.pdf"
 loader=PyPDFLoader(pdf_path)
 document=loader.load()
 
