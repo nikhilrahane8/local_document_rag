@@ -30,9 +30,9 @@ while True:
         print("vbot: Goodbye!")
         break
 
-    matching_docs=db.similarity_search(query,k=1)
+    matching_docs=db.similarity_search(query,k=3)
 
-    context=matching_docs[0].page_content
+    context="\n\n---\n\n".join([doc.page_content for doc in matching_docs])
     prompt=f"""You are a strict, helpful AI assistant. Read the CONTEXT below and answer the QUESTION based ONLY on the CONTEXT. If the answer is not in the context, say"I cannot find this in the document."
 
 ### CONTEXT:
